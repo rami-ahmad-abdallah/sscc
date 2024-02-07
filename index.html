@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .first-video {
+        width: 250px;
+        clip-path: polygon(48% 1%, 96% 51%, 11% 100%, 11% 40%);
+        height: 250px;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-25%, -50%);
+    }
+
+    .first-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .second-video {
+        width: 250px;
+        clip-path: polygon(72% 0, 0 65%, 73% 100%);
+        height: 250px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-100%, -90%);
+    }
+
+    .second-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .third-video {
+        width: 250px;
+        clip-path: polygon(16% 11%, 100% 55%, 55% 89%, 0 25%);
+        height: 250px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-127%, -25%);
+    }
+
+    .third-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .fourth-video {
+        width: 250px;
+        clip-path: polygon(11% 45%, 75% 0%, 78% 62%, 49% 89%);
+        height: 250px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-75%, 28%);
+    }
+
+    .fourth-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+<body>
+    <div class="first-video">
+        <video src="./Files/SSCC-CONST.mp4" muted="" loop="" autoplay playsinline=""></video>
+    </div>
+
+    <div class="second-video">
+        <video src="./Files/SSCC-DESIGN.mp4" muted="" loop="" autoplay playsinline=""></video>
+    </div>
+
+    <div class="third-video">
+        <video src="./Files/SSCC-CONST.mp4" muted="" loop="" autoplay playsinline=""></video>
+    </div>
+
+    <div class="fourth-video">
+        <video src="./Files/SSCC-DESIGN.mp4" muted="" loop="" autoplay playsinline=""></video>
+    </div>
+
+    <div class="title">
+        <h1>SSCC</h1>
+    </div>
+</body>
+
+</html>
