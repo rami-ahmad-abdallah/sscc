@@ -5,94 +5,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <style>
-    .first-video {
-        width: 250px;
-        clip-path: polygon(48% 1%, 96% 51%, 11% 100%, 11% 40%);
-        height: 250px;
-        position: absolute;
-        top: 25%;
+    /* .square {
+        width: 350px;
+        height: 350px;
+        border: 1px solid;
+        position: fixed;
+        top: 50%;
         left: 50%;
-        transform: translate(-25%, -50%);
+        transform: translate(-50%, -50%) rotate(45deg);
+    } */
+
+    * {
+        font-family: "Almarai", Arial;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .first-video video {
+    body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-image: url("Files/rotated-logo.png");
+        background-size: 150px;
+        background-attachment: fixed;
+    }
+
+    .videoo {
+        filter: brightness(0.5);
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .videoo video {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .first-video {
+        width: 250px;
+        height: 250px;
+        clip-path: polygon(50% 0%, 80% 55%, 17% 100%, 9% 41%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -99%);
     }
 
     .second-video {
         width: 250px;
-        clip-path: polygon(72% 0, 0 65%, 73% 100%);
+        clip-path: polygon(50% 0%, 0% 50%, 60% 76%);
         height: 250px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-100%, -90%);
-    }
-
-    .second-video video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        transform: translate(-92%, -57%);
     }
 
     .third-video {
         width: 250px;
-        clip-path: polygon(16% 11%, 100% 55%, 55% 89%, 0 25%);
+        clip-path: polygon(6% 19%, 95% 57%, 55% 80%, 0 25%);
         height: 250px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-127%, -25%);
-    }
-
-    .third-video video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        transform: translate(-99%, -25%);
     }
 
     .fourth-video {
         width: 250px;
-        clip-path: polygon(11% 45%, 75% 0%, 78% 62%, 49% 89%);
+        clip-path: polygon(10% 50%, 80% 10%, 80% 60%, 49% 89%);
         height: 250px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-75%, 28%);
+        transform: translate(-53%, 6%);
     }
 
-    .fourth-video video {
+    .company-title {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-20%, -55%);
+        text-align: center;
+        line-height: 30px;
+        z-index: 5;
+    }
+
+    .company-title h1 {
+        letter-spacing: 20px;
+        font-size: 38px;
+    }
+
+    .background-videos {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .bvbg {
+        z-index: 3;
         width: 100%;
         height: 100%;
+        background: #ffffff38;
+        backdrop-filter: blur(7px);
+        position: relative;
+
+    }
+
+    .bv {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
         object-fit: cover;
+        opacity: 0;
+        z-index: 2;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .active-bv {
+        opacity: 1;
     }
 </style>
 
 <body>
-    <div class="first-video">
-        <video src="./Files/SSCC-CONST.mp4" muted="" loop="" autoplay playsinline=""></video>
+
+    <div class="background-videos">
+        <video class="bv bv1" id="bv1" src="./Files/SSCC-CONST.mp4" muted="" loop="" playsinline=""></video>
+        <video class="bv bv2" id="bv2" src="./Files/SSCC-DESIGN.mp4" muted="" loop="" playsinline=""></video>
+        <video class="bv bv3" id="bv3" src="./Files/SSCC-CONST.mp4" muted="" loop="" playsinline=""></video>
+        <video class="bv bv4" id="bv4" src="./Files/SSCC-DESIGN.mp4" muted="" loop="" playsinline=""></video>
+        <div class="bvbg" id="bvbg"></div>
     </div>
 
-    <div class="second-video">
-        <video src="./Files/SSCC-DESIGN.mp4" muted="" loop="" autoplay playsinline=""></video>
+    <div class="videoo first-video">
+        <video src="./Files/SSCC-CONST.mp4" muted="" loop="" playsinline=""></video>
     </div>
 
-    <div class="third-video">
-        <video src="./Files/SSCC-CONST.mp4" muted="" loop="" autoplay playsinline=""></video>
+    <div class="videoo second-video">
+        <video src="./Files/SSCC-DESIGN.mp4" muted="" loop="" playsinline=""></video>
     </div>
 
-    <div class="fourth-video">
-        <video src="./Files/SSCC-DESIGN.mp4" muted="" loop="" autoplay playsinline=""></video>
+    <div class="videoo third-video">
+        <video src="./Files/SSCC-CONST.mp4" muted="" loop="" playsinline=""></video>
     </div>
 
-    <div class="title">
-        <h1>SSCC</h1>
+    <div class="videoo fourth-video">
+        <video src="./Files/SSCC-DESIGN.mp4" muted="" loop="" playsinline=""></video>
     </div>
+
+    <div class="company-title">
+        <h1 class="title">SSCC</h1>
+        <h2>شركة الأنظمة العلمية للمقاولات</h2>
+        <h3>Scientific Systems Construction Company</h3>
+    </div>
+
+
+    <script>
+        let VideosWrapper = document.querySelectorAll('.videoo');
+
+        VideosWrapper.forEach((el) => {
+            el.addEventListener("mouseenter", () => {
+                el.style.filter = "brightness(0.9)";
+                el.querySelector("video").play();
+
+                if (el.classList.contains("first-video")) {
+                    document.getElementById("bv1").classList.add('active-bv');
+                    document.getElementById("bv1").play();
+                    document.getElementById('bvbg').style.background = "rgb(247 214 26 / 70%)";
+                } else if (el.classList.contains("second-video")) {
+                    document.getElementById("bv2").classList.add('active-bv');
+                    document.getElementById("bv2").play();
+                    document.getElementById('bvbg').style.background = "linear-gradient(180deg, rgb(57 70 125 / 70%), rgb(66 140 195 / 70%))";
+                } else if (el.classList.contains("third-video")) {
+                    document.getElementById("bv3").classList.add('active-bv');
+                    document.getElementById("bv3").play();
+                    document.getElementById('bvbg').style.background = "rgb(174 168 171 / 70%)";
+                } else if (el.classList.contains("fourth-video")) {
+                    document.getElementById("bv4").classList.add('active-bv');
+                    document.getElementById("bv4").play();
+                    document.getElementById('bvbg').style.background = "rgb(213 183 143 / 70%)";
+                }
+            });
+
+            el.addEventListener("mouseleave", () => {
+                el.style.filter = "brightness(0.5)";
+                el.querySelector("video").pause();
+
+                if (el.classList.contains("first-video")) {
+                    document.getElementById("bv1").classList.remove('active-bv');
+                    document.getElementById("bv1").pause();
+                    document.getElementById('bvbg').style.background = "#ffffff38";
+                } else if (el.classList.contains("second-video")) {
+                    document.getElementById("bv2").classList.remove('active-bv');
+                    document.getElementById("bv2").pause();
+                    document.getElementById('bvbg').style.background = "#ffffff38";
+                } else if (el.classList.contains("third-video")) {
+                    document.getElementById("bv3").classList.remove('active-bv');
+                    document.getElementById("bv3").pause();
+                    document.getElementById('bvbg').style.background = "#ffffff38";
+                } else if (el.classList.contains("fourth-video")) {
+                    document.getElementById("bv4").classList.remove('active-bv');
+                    document.getElementById("bv4").pause();
+                    document.getElementById('bvbg').style.background = "#ffffff38";
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
